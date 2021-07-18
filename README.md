@@ -21,6 +21,24 @@ Or install it yourself as:
 $ gem install cable_modal
 ```
 
+## Upgrading from ajax_modal_rails
+
+This gem is intended to replace [ajax_modal_rails](https://github/existentialmutt/ajax_modal_rails), which is now deprecated.  It is not a drop-in replacement but the patterns are similar enough that upgrading should be straightforward.
+
+TODO
+
+#### Controllers
+
+* new concern
+* render / redirect operations
+
+#### Views
+* new frame in layout
+* update data-attributes
+
+#### Script
+* install and load new npm package
+
 ## Contributing
 Contribution directions go here.
 
