@@ -1,0 +1,25 @@
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  - rubocop-performance
+  - standard/cop/block_single_line_braces
+
+inherit_gem:
+  standard: config/base.yml
+
+AllCops:
+  TargetRubyVersion: 2.7.3
+  Exclude:
+    - "bin/rails"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "test/dummy/bin/**/*"
+    - "test/dummy/config/**/*"
+    - "test/dummy/db/schema.rb"
+    - "tmp/**/*"
+    - "vendor/**/*"
+
+Lint/Debugger: # don't leave binding.pry
+  Enabled: true
