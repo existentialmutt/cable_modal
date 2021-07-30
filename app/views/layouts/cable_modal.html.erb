@@ -1,0 +1,14 @@
+<% if content_for?(:cable_modal_header) %>
+  <div class="modal-header">
+    <%= content_for(:cable_modal_header) %>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+<% end %>
+<div class="modal-body">
+  <%= yield %>
+</div>
+<% if content_for?(:cable_modal_footer) %>
+  <div class="modal-footer">
+    <%= content_for(:cable_modal_footer) %>
+  </div>
+<% end %>
