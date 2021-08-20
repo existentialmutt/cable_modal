@@ -1,0 +1,15 @@
+{
+  "name": "cable_modal",
+  "version": "0.1.0",
+  "description": "Modal form workflows, powered by CableReady operations and mrujs",
+  "main": "index.js",
+  "directories": {
+    "javascript": "javascript",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafe Rosen",
+  "license": "MIT"
+}
