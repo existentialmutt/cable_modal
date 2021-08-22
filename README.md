@@ -7,6 +7,8 @@ The plugin provides a `<cable-modal>` web component and a set of custom CableRea
 - `closeModal()`
 - `updateModal({html: "HTML string for modal content"})`
 
+![Demo screencast](/demo.gif)
+
 ## Installation
 First install the gem
 
