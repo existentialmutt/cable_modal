@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Rafe Rosen",
+  "author": "Rafe Rosen <rafe@existentialmutt.com> (http://existentialmutt.com)",
   "license": "MIT",
   "dependencies": {
     "cable_ready": "^5.0.0.pre2"
