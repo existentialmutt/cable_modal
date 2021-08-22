@@ -1,5 +1,5 @@
 # CableModal
-This plugin facilitates creating server-rendered modal workflows in Rails using CableReady custom operations.  A plugin system is provided to allow you to use your modal provider of choice.  A plugin for Bootstrap 5 is provided and used in these examples.
+This plugin facilitates creating server-rendered modal workflows in Rails using [CableReady](https://cableready.stimulusreflex.com) custom operations.  A plugin system is provided to allow you to use your modal provider of choice.  A plugin for Bootstrap 5 is provided and used in these examples.
 
 The plugin provides a `<cable-modal>` web component and a set of custom CableReady operations for controlling it.  Once the `<cable-modal>` element is on the page, you can control it with the following operations:
 
