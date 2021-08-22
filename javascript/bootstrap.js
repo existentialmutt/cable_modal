@@ -1,37 +1,36 @@
-CableModal.operations.openModal = operation => {
-  this.modal.show()
-}
+export default class Bootstrap {
+  constructor(Modal) {
+    this.Modal = Modal
+  }
 
-CableModal.operations.updateModal = operation => {
-  this.contentTarget.innerHTML = operation.html
-  this.modal.handleUpdate()
-}
+  connect() {
+    this.modal = new this.constructor.plugin.Modal(this.querySelector('[slot="modal"]'))
+  }
 
-CableModal.operations.closeModal = operation => {
-  this.modal.hide()
-}
+  disconnect() {
+    this.modal.hide()
+    this.modal.dispose()
+  }
 
-export const Bootstrap = {
-  connect(target) {
-    this.modalInstance = new Modal(this.element)
-    this.modalElement = target
-  },
+  openModal(_operation) {
+    this.modal.show()
+  }
 
-  disconnect(target) {
-    this.modalInstance.dispose()
-    this.modalInstance = undefined
-    this.modalElement = undefined
-  },
+  closeModal(_operation) {
+    this.modal.hide()
+  }
 
-  openModal(operation) {
-    this.modalInstance.show()
-  },
   updateModal(operation) {
-    const contentElement = this.modalElement.querySelector("[data-cable-modal-content]")
-    contentElement.innerHTML = operation.html
-    this.modalInstance.handleUpdate()
-  },
-  closeModal(operation) {
-    this.modalInstance.hide()
-  },
+    this.querySelector('[slot="content"]').innerHTML = operation.html
+    this.modal.handleUpdate()
+  }
+
+  get defaultContent() {
+    return `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" slot="modal">
+      <div class="modal-dialog">
+        <div class="modal-content" slot="content">
+        </div>
+      </div>
+    </div>`
+  }
 }

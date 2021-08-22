@@ -1,15 +1,23 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require rails-ujs
-//= require activestorage
-//= require_tree .
+// import 'bootstrap/dist/css/bootstrap.min.css'
+import CableReady from "cable_ready"
+import mrujs, { CableCar } from "mrujs"
+
+
+mrujs.start({
+  plugins: [
+    new CableCar(CableReady)
+  ]
+})
+
+import { CableModal, Bootstrap } from "../../../../../javascript/index"
+import { Modal } from "bootstrap"
+CableModal.use(new Bootstrap(Modal))
+
+// TODO can remove once 5.0.0-pre.3 is out
+CableReady.operations.redirectTo = (operation) => {
+  let { url, action } = operation
+  action = action || 'advance'
+  if (window.Turbo) window.Turbo.visit(url, { action })
+  if (window.Turbolinks) window.Turbolinks.visit(url, { action })
+  if (!window.Turbo && !window.Turbolinks) window.location.href = url
+}

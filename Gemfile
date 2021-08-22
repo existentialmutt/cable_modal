@@ -5,7 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 group :development do
-  gem "pg"
+  gem "sqlite3"
+  gem "webpacker", "~> 5.4"
 end
 
 # To use a debugger

@@ -1,0 +1,23 @@
+<%- content_for :cable_modal_header do %>
+  <h3>Terms of Service</h3>
+<%- end  %>
+
+<div class="card mb-4">
+  <div class="card-body">
+    Lorem ipsum dolor sit amet consectetur adipisicing, elit. Amet, voluptas tempora dolores, beatae asperiores ipsum a nemo nisi nobis nesciunt possimus eos quo fuga aperiam temporibus doloremque dolorem, voluptatem officia.
+  </div>
+</div>
+
+<%= form_with model: @confirmation, data: {cable_car: true} do |f| %>
+  <div class="form-check">
+    <%= f.check_box :tos, class: "form-check-input" %>
+    <%= f.label :tos, "I accept the terms of service", class: "form-check-label" %>
+    <%- if @confirmation.errors.include?(:tos) %>
+      <div class="form-text text-danger">Please check the box</div>
+    <%- end %>
+  </div>
+  <div class="form-group mt-4 d-flex">
+    <%= f.submit "Submit And Close", class: "btn btn-primary ms-auto" %>
+    <%= f.submit "Submit And Visit", class: "btn btn-primary ms-3" %>
+  </div>
+<%- end %>
