@@ -1,41 +1,40 @@
-/*
-  Example usage
 
-  import {CableModal, Bootstrap} from "cable_modal"
-  import {Modal} from "bootstrap"
-  CableModal.use(new Bootstrap(Modal))
-
-  <cable-modal></cable-modal>
-
-  -------------------------
-
-  Define your own Plugin:
-  {
-    connect() {},
-    disconnect() {},
-    openModal() {},
-    closeModal() {},
-    updateModal() {},
-    defaultContent:
-  }
-
-  all methods will run bound to the <cable-modal></cable-modal> custom element
-
-  -------------
-
-  TODO:
-
-  - Allow more than 1 per page with custom config (might mean an API change)
-  - callbacks / events
-*/
 
 
 import CableReady from "cable_ready"
 
 
 export default class CableModal extends HTMLElement {
+  /*
+    Example usage
+
+    import {CableModal, Bootstrap} from "cable_modal"
+    import {Modal} from "bootstrap"
+    CableModal.use(new Bootstrap(Modal))
+
+    <cable-modal></cable-modal>
+
+    -------------------------
+
+    Define your own Plugin:
+    {
+      connect() {},
+      disconnect() {},
+      openModal() {},
+      closeModal() {},
+      updateModal() {},
+      defaultContent:
+    }
+
+    all methods will run bound to the <cable-modal></cable-modal> custom element
+  */
   static use(plugin) {
     this.plugin = plugin
+  }
+
+  constructor() {
+    super()
+    this.plugin = this.constructor.plugin
   }
 
   connectedCallback() {
@@ -46,7 +45,7 @@ export default class CableModal extends HTMLElement {
         closeModal,
         updateModal,
         defaultContent
-      } } = this.constructor
+      } } = this
 
     this.innerHTML || (this.innerHTML = defaultContent)
     CableReady.operations.openModal = openModal.bind(this)
@@ -56,7 +55,7 @@ export default class CableModal extends HTMLElement {
   }
 
   disconnectedCallback() {
-    const { plugin: { disconnect } } = this.constructor
+    const { plugin: { disconnect } } = this
     disconnect.bind(this)()
     CableReady.operations.openModal = undefined
     CableReady.operations.closeModal = undefined
