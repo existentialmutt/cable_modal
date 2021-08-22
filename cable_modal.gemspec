@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Rafe Rosen"]
   spec.email = ["rafe@existentialmutt.com"]
   spec.homepage = "https://github.com/existentialmutt/cable_modal"
-  spec.summary = "Modal form workflows, powered by CableReady operations and mrujs"
-  spec.description = "This library provides controller and front-end code to facilitate modal workflows in Ruby on Rails.  Right now it provides an adapter for Bootstrap 5. Other versions and libraries may be added in the future. Behind the scenes it uses CableReady's cable_car operation serializer and mrujs."
+  spec.summary = "Modal form workflows, powered by CableReady operations and 🧡"
+  spec.description = "This library provides a set of CableReady operations for driving server-rendered modal form workflows in Rails.  Right now it provides an adapter for Bootstrap 5. Plugins for other modal libraries may be added in the future."
   spec.license = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 6.1.4"
-  spec.add_dependency "cable_ready", "5.0.0pre2"
+  spec.add_dependency "cable_ready", "~> 5.0.0pre2"
   spec.add_development_dependency "rubocop"
   spec.add_development_dependency "standard"
 end
