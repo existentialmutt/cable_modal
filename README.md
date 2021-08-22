@@ -1,5 +1,5 @@
 # CableModal
-This plugin facilitates creating server-rendered modal workflows in Rails using CableReady custom operations.  A plugin system is provided to allow you to use your modal provider of choice.  A plugin for Bootstrap 5 is provided and used in these examples.
+This plugin facilitates creating server-rendered modal workflows in Rails using [CableReady](https://cableready.stimulusreflex.com) custom operations.  A plugin system is provided to allow you to use your modal provider of choice.  A plugin for Bootstrap 5 is provided and used in these examples.
 
 The plugin provides a `<cable-modal>` web component and a set of custom CableReady operations for controlling it.  Once the `<cable-modal>` element is on the page, you can control it with the following operations:
 
@@ -13,13 +13,13 @@ The plugin provides a `<cable-modal>` web component and a set of custom CableRea
 First install the gem
 
 ```bash
-$ bundle add 'cable_modal'
+$ bundle add cable_modal
 ```
 
 Next install the npm package
 
 ```bash
-$ yarn add 'cable_modal'
+$ yarn add cable_modal
 ```
 
 Finally, run the generator
@@ -30,7 +30,7 @@ $ bin/rails g cable_modal:install
 
 The generator does three things:
 
-1. installs a `<cable-modal></cable-modal>` web component into your `application.html.erb` layout
+1. installs a `<cable-modal>` web component into your `application.html.erb` layout
 3. installs a `cable_modal.html.erb` template into `app/views/layouts`.  Use this layout to assist with rendering modal content.
 2. adds intialization code to `application.js`
 
@@ -45,7 +45,7 @@ A great way to to use these to control the custom modal is with [mrujs](https://
 
 First you'll want to set up mrujs with the CableCar plugin.  Follow the [instructions in the mrujs docs](https://mrujs.com/how-tos/integrate-cablecar).
 
-Once that's done, you can add `data-cable-car` to any links or forms you want to use to control the modal.
+Now you can add `data-cable-car` to any links or forms you want to use to control the modal.
 
 ```html
   <a href="/confirmations/new" data-cable-car>Open Confirmation in Modal</a>
