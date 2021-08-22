@@ -1,4 +1,5 @@
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import CableReady from "cable_ready"
 import mrujs, { CableCar } from "mrujs"
 
