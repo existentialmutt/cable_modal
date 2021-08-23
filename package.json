@@ -1,6 +1,6 @@
 {
   "name": "cable_modal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Modal form workflows, powered by CableReady operations and mrujs",
   "main": "./javascript/index.js",
   "directories": {
@@ -13,7 +13,7 @@
   "author": "Rafe Rosen <rafe@existentialmutt.com> (http://existentialmutt.com)",
   "license": "MIT",
   "dependencies": {
-    "cable_ready": "^5.0.0.pre2"
+    "cable_ready": "^5.0.0-pre2"
   },
   "devDependencies": {
     "@popperjs/core": "^2.9.3",
