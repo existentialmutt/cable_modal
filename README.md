@@ -16,15 +16,14 @@ First install the gem
 $ bundle add cable_modal
 ```
 
-Next install the npm package
+Next install the cable_modal NPM package (+ cable_ready if you don't have it already)
 
 ```bash
-$ yarn add cable_modal
+$ yarn add cable_modal cable_ready
 ```
 
 Finally, run the generator
-
-```
+```bash
 $ bin/rails g cable_modal:install
 ```
 
