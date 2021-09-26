@@ -1,7 +1,7 @@
 {
   "name": "cable_modal",
-  "version": "0.1.4",
-  "description": "Modal form workflows, powered by CableReady operations and mrujs",
+  "version": "0.1.5",
+  "description": "Modal form workflows, powered by CableReady operations and 🧡",
   "main": "./javascript/index.js",
   "directories": {
     "javascript": "javascript",
@@ -13,13 +13,14 @@
   "author": "Rafe Rosen <rafe@existentialmutt.com> (http://existentialmutt.com)",
   "license": "MIT",
   "peerDependencies": {
-    "cable_ready": ">= 5.0.0-pre2"
+    "cable_ready": ">= 5.0.0-pre3"
   },
   "devDependencies": {
     "@popperjs/core": "^2.9.3",
     "@rails/webpacker": "5.4.2",
     "bootstrap": "^5.1.0",
-    "mrujs": "^0.3.7",
+    "cable_ready": "^5.0.0-pre3",
+    "mrujs": "^0.5.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^4.0.0"

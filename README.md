@@ -44,14 +44,14 @@ A great way to to use these to control the custom modal is with [mrujs](https://
 
 First you'll want to set up mrujs with the CableCar plugin.  Follow the [instructions in the mrujs docs](https://mrujs.com/how-tos/integrate-cablecar).
 
-Now you can add `data-cable-car` to any links or forms you want to use to control the modal.
+Now you can add `data-remote` to any links or forms you want to use to control the modal.
 
 ```html
-  <a href="/confirmations/new" data-cable-car>Open Confirmation in Modal</a>
+  <a href="/confirmations/new" data-remote>Open Confirmation in Modal</a>
 
   <!-- OR -->
 
-  <form action="/confirmations" data-cable-car>
+  <form action="/confirmations" data-remote>
     <button>Submit form and process result in modal</button>
   </form>
 ```
@@ -87,6 +87,8 @@ Then in your controllers, process the request and use `render operations:` to se
     end
   end
 ```
+
+There's a full reference implementation in [/test/dummy](/test/dummy) of this repo.
 
 ## Customization
 
